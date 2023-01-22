@@ -74,10 +74,3 @@ app.listen(3000, function(){
     console.log("server is running on port 3000");
 });
 
-
-//API key
-//47eca3a2a40f696d1a169eda70bf56c8-us13
-//List Id
-//a652193865.
-//API key new
-//79579fe7d6ffb1e1ae6bcd27c19d2bf4-us13
