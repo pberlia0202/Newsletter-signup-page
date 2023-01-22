@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+require("dotenv").config();
 // const request = require("request");
 const https = require("https");
 const { resolve6 } = require("dns/promises");
@@ -37,12 +38,12 @@ var data = {
 };
 
 
-
+console.log(process.env.API);
 var jsonData = JSON.stringify(data);
 const url = "https://us13.api.mailchimp.com/3.0/lists/a652193865";
 const options = {
     method: "POST",
-    auth: "pberlia:47eca3a2a40f696d1a169eda70bf56c8-us13"
+    auth:  process.env.API
 }
 
 const request = https.request(url, options, function(response) {
@@ -69,7 +70,7 @@ app.post("/failure", function(req,res) {
     res.redirect("/")
 })
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(3000, function(){
     console.log("server is running on port 3000");
 });
 
@@ -78,3 +79,5 @@ app.listen(process.env.PORT || 3000, function(){
 //47eca3a2a40f696d1a169eda70bf56c8-us13
 //List Id
 //a652193865.
+//API key new
+//79579fe7d6ffb1e1ae6bcd27c19d2bf4-us13
